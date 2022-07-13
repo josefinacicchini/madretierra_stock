@@ -1,0 +1,35 @@
+
+{% include 'header.html' %}
+{% for stock in stock %}
+<form method="post" action="/update" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            Editar producto
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del producto</h5>
+            <p class="card-text">
+                <input type="hidden" value="{{ stock[0] }}" name="txtID" id="txtID">
+                <div class="form-group">
+                    <label for="txtNombre">Nombre del producto:</label>
+                     <input id="txtNombre" value="{{ stock[1] }}" class:="formcontrol" type="text" name="txtNombre">
+                </div>
+                <div class="form-group">
+                     <label for="txtAroma">Aroma:</label>
+                    <input id="txtAroma" value="{{ stock[2] }}" class:="formcontrol" type="text" name="txtAroma">
+                </div>
+                <div class="form-group">
+                    <label for="txtCantidad">Cantidad:</label>
+                     <input id="txtCantidad" value='{{ stock[3] }}' class="formcontrol" type="text" name="txtCantidad">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" style="background-color: #c3cbb8; color: white; border: #c3cbb8;" value="Modificar">
+                    <a href="{{url_for('home')}}" class="btn btnprimary">Regresar</a>
+                </div>
+            </p>
+        </div>
+    </div>
+</form>
+{% endfor %}
+
+{% include 'footer.html' %}

@@ -1,0 +1,37 @@
+{% include 'header.html' %}
+<br>
+<a href=" {{ url_for('create') }} " class="btn" style="background-color: #c3cbb8; color: white;">
+ +
+</a>
+<br>
+<br>
+<table class="table table-light text-center">
+  <thead class="thead-light">
+    <tr>
+      <th>ID</th>
+      <th>Nombre_producto</th>
+      <th>Aroma</th>
+      <th>Cantidad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stock %}
+    <tr>
+    <td>{{stock[0]}}</td>
+    <td>{{stock[1]}}</td>
+    <td>{{stock[2]}}</td>
+    <td>{{stock[3]}}</td>
+    <td>
+      <a class="btn mr-2" style="background-color: #c3cbb8; color: white;" href="/edit/{{stock[0]}}">Editar</a>  
+      <a class="btn ml-2" style="background-color: #cc8585; color: white;" onclick="return confirm('¿Desea borrar el producto?')" href="/destroy/{{stock[0]}}">Eliminar</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+
+
+ 
