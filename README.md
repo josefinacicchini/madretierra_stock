@@ -3,5 +3,5 @@ Web application to manage Madre Tierra's stock
 
 http://josefinacicchini.pythonanywhere.com
 
-user: guest
+user: guest  
 pass: guest
